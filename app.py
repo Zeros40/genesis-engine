@@ -7,16 +7,15 @@ from io import BytesIO
 # --- GENESIS PROTOCOL SETTINGS ---
 st.set_page_config(page_title="Genesis Creative Engine", layout="wide")
 
-# Simple, safe CSS for Python 3.14
-custom_css = """
+# Using the standard parameter name 'unsafe_allow_html'
+st.markdown("""
 <style>
     .stApp { background-color: #0A0A0A; color: white; }
     h1, h2, h3 { color: #D4AF37 !important; }
-    .stTextInput input { color: white !important; background-color: #1A1A1A !important; }
-    .stSelectbox div { color: white !important; background-color: #1A1A1A !important; }
+    div[data-baseweb="input"] { background-color: #1A1A1A !important; }
+    input { color: white !important; }
 </style>
-"""
-st.markdown(custom_css, unsafe_allow_stdio=True)
+""", unsafe_allow_html=True)
 
 # 1. API SETUP
 st.sidebar.title("GENESIS SETTINGS")
