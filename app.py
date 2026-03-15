@@ -6,10 +6,21 @@ from io import BytesIO
 
 # --- GENESIS PROTOCOL SETTINGS ---
 st.set_page_config(page_title="Genesis Creative Engine", layout="wide")
+
+# Fixed CSS Block
 st.markdown("""
     <style>
-    .stApp { background-color: #0A0A0A; color: white; }
-    h1, h2, h3 { color: #D4AF37 ! apprehension; }
+    .stApp { 
+        background-color: #0A0A0A; 
+        color: white; 
+    }
+    h1, h2, h3 { 
+        color: #D4AF37 !important; 
+    }
+    /* Ensure inputs are visible */
+    input {
+        color: white !important;
+    }
     </style>
 """, unsafe_allow_stdio=True)
 
