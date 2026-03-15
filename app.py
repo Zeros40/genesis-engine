@@ -7,25 +7,19 @@ from io import BytesIO
 # --- GENESIS PROTOCOL SETTINGS ---
 st.set_page_config(page_title="Genesis Creative Engine", layout="wide")
 
-# Fixed CSS Block
-st.markdown("""
-    <style>
-    .stApp { 
-        background-color: #0A0A0A; 
-        color: white; 
-    }
-    h1, h2, h3 { 
-        color: #D4AF37 !important; 
-    }
-    /* Ensure inputs are visible */
-    input {
-        color: white !important;
-    }
-    </style>
-""", unsafe_allow_stdio=True)
+# Simple, safe CSS for Python 3.14
+custom_css = """
+<style>
+    .stApp { background-color: #0A0A0A; color: white; }
+    h1, h2, h3 { color: #D4AF37 !important; }
+    .stTextInput input { color: white !important; background-color: #1A1A1A !important; }
+    .stSelectbox div { color: white !important; background-color: #1A1A1A !important; }
+</style>
+"""
+st.markdown(custom_css, unsafe_allow_stdio=True)
 
 # 1. API SETUP
-# Get your key at: https://aistudio.google.com/
+st.sidebar.title("GENESIS SETTINGS")
 api_key = st.sidebar.text_input("Enter Gemini API Key", type="password")
 
 if api_key:
