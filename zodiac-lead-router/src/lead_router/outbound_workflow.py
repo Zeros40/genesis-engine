@@ -22,7 +22,7 @@ class Target(BaseModel):
 class OutboundInput(BaseModel):
     targets: list[Target]
     sender_name: str = "Mohamed"
-    booking_link: str = "https://cal.com/BOOKING-LINK"
+    booking_link: str = "https://cal.com/zodiachub2026/intro-call"
 
 
 class Sequence(BaseModel):

@@ -20,6 +20,7 @@ class LeadInput(BaseModel):
     email: str
     message: str = ""
     source: str = "website"
+    booking_link: str = "https://cal.com/zodiachub2026/intro-call"
 
 
 class Qualification(BaseModel):
@@ -44,7 +45,7 @@ Rules:
 Then write a short personalized reply draft (max 150 words) from Mohamed at the practice. It must:
 - Reference something specific from the lead's message or company.
 - In one sentence, name one concrete automation that would remove their repetitive quoting and admin work.
-- Invite them to a 30-minute call with a booking link placeholder: https://cal.com/BOOKING-LINK
+- Invite them to a 15-minute intro call and include the booking link provided in the lead details, exactly as given.
 - Professional, warm, no fluff.
 
 Respond with JSON only, exactly this shape:
@@ -61,6 +62,7 @@ async def qualify_lead(lead: dict, client=Depends(get_mistral_client)) -> dict:
         f"Company: {lead['company']}\n"
         f"Email: {lead['email']}\n"
         f"Source: {lead['source']}\n"
+        f"Booking link: {lead['booking_link']}\n"
         f"Message:\n{lead['message'] or '(no message provided)'}\n\n"
         "Score this lead and write the reply draft. JSON only."
     )

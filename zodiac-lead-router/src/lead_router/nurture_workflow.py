@@ -18,7 +18,7 @@ class NurtureInput(BaseModel):
     original_message: str
     pain_point: str = ""
     sender_name: str = "Mohamed"
-    booking_link: str = "https://cal.com/BOOKING-LINK"
+    booking_link: str = "https://cal.com/zodiachub2026/intro-call"
 
 
 class NurturePlan(BaseModel):
