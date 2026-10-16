@@ -26,7 +26,7 @@ class OutboundInput(BaseModel):
 
 
 class Sequence(BaseModel):
-    company: str
+    company: str = ""
     subject: str
     step1: str
     step2: str
